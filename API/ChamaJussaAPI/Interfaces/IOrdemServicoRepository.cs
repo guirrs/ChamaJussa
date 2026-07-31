@@ -14,6 +14,6 @@ namespace ChamaJussaAPI.Interfaces
         bool LocalizacaoExiste(int localizacaoId);
         bool StatusExiste(int statusId);
         int ObterStatusInicialId();
-        int? ObterFilaInicialId();
+        int? ObterFilaInicialId(int? filaId);
     }
 }

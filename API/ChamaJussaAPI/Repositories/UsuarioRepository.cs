@@ -36,6 +36,11 @@ namespace ChamaJussaAPI.Repositories
             return _context.usuario.Any(u => u.email == email);
         }
 
+        public bool NIFExiste(int nif)
+        {
+            return _context.usuario.Any(u => u.nif == nif);
+        }
+
         public void Adicionar(usuario usuario)
         {
             _context.usuario.Add(usuario);

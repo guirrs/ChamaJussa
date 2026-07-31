@@ -9,6 +9,7 @@ namespace ChamaJussaAPI.Interfaces
         List<usuario> Listar();
         usuario? ObterPorId(Guid id);
         usuario? ObterPorEmail(string email);
+        bool NIFExiste(int nif);
         bool EmailExiste(string email);
         void Adicionar(usuario usuario);
     }

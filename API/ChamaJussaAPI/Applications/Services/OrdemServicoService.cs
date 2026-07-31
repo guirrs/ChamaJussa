@@ -54,7 +54,7 @@ namespace ChamaJussaAPI.Applications.Services
                 throw new DomainException("Descrição é obrigatória.");
             }
 
-            if (osDto.LocalizacaoId.HasValue && !_repository.LocalizacaoExiste(osDto.LocalizacaoId.Value))
+            if (osDto.LocalizacaoId != null && !_repository.LocalizacaoExiste(osDto.LocalizacaoId))
             {
                 throw new DomainException("A localização informada não existe.");
             }
@@ -67,7 +67,7 @@ namespace ChamaJussaAPI.Applications.Services
             }
 
             int statusIdInicial = _repository.ObterStatusInicialId();
-            int? filaIdInicial = _repository.ObterFilaInicialId();
+            int? filaIdInicial = _repository.ObterFilaInicialId(osDto.FilaId);
 
             OrdemDeServico os = new OrdemDeServico
             {

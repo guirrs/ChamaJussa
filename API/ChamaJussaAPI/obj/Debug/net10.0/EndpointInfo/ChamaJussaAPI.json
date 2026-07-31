@@ -71,6 +71,10 @@
                     "type": "integer",
                     "format": "int32"
                   },
+                  "FilaId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
                   "Descricao": {
                     "type": "string"
                   },
@@ -85,6 +89,9 @@
                   "style": "form"
                 },
                 "LocalizacaoId": {
+                  "style": "form"
+                },
+                "FilaId": {
                   "style": "form"
                 },
                 "Descricao": {
@@ -224,6 +231,10 @@
                     "type": "integer",
                     "format": "int32"
                   },
+                  "FilaId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
                   "Descricao": {
                     "type": "string"
                   },
@@ -238,6 +249,9 @@
                   "style": "form"
                 },
                 "LocalizacaoId": {
+                  "style": "form"
+                },
+                "FilaId": {
                   "style": "form"
                 },
                 "Descricao": {

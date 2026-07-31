@@ -1,110 +1,80 @@
-CREATE DATABASE ChamaJussaDb
+
+
+-- Reinicia os IDs das tabelas com IDENTITY
+DBCC CHECKIDENT ('fila', RESEED, 0);
+DBCC CHECKIDENT ('status', RESEED, 0);
 GO
 
-USE ChamaJussaDb
+DECLARE @Usuario1 UNIQUEIDENTIFIER = NEWID();
+GO
+DECLARE @Usuario2 UNIQUEIDENTIFIER = NEWID();
+GO
+DECLARE @Usuario3 UNIQUEIDENTIFIER = NEWID();
+GO
+DECLARE @Usuario4 UNIQUEIDENTIFIER = NEWID();
 GO
 
-CREATE TABLE Usuario (
-    usuario_id INT PRIMARY KEY,
-    nome VARCHAR(50),
-    email VARCHAR(50),
-    senha VARBINARY(32),
-    nif INT
-);
-GO
-
-CREATE TABLE Local (
-    local_id INT PRIMARY KEY,
-    nome VARCHAR(50),
-    andar VARCHAR(15)
-);
-GO
-
-CREATE TABLE Fila (
-    fila_id INT IDENTITY(1,1) PRIMARY KEY,
-    nome VARCHAR(50) NOT NULL
-);
-GO
-
-CREATE TABLE Status (
-    status_id INT IDENTITY(1,1) PRIMARY KEY,
-    nome VARCHAR(50)
-);
-GO
-
-CREATE TABLE OrdemServico (
-    or_id INT PRIMARY KEY,
-    nome_item VARCHAR(50),
-    dt_criacao DATETIME,
-    descricao VARCHAR(250),
-    imagem VARBINARY(MAX),
-    status VARCHAR(50),
-    status_id INT,
-    fila_id INT,
-    solicitante INT,
-    local_id INT,
-
-    CONSTRAINT FK_OrdemServico_Status
-        FOREIGN KEY (status_id)
-        REFERENCES Status(status_id),
-
-    CONSTRAINT FK_OrdemServico_Fila
-        FOREIGN KEY (fila_id)
-        REFERENCES Fila(fila_id),
-
-    CONSTRAINT FK_OrdemServico_Usuario
-        FOREIGN KEY (solicitante)
-        REFERENCES Usuario(usuario_id),
-
-    CONSTRAINT FK_OrdemServico_Local
-        FOREIGN KEY (local_id)
-        REFERENCES Local(local_id)
-);
-GO
-
--- Usuários
-INSERT INTO Usuario (usuario_id, nome, email, senha, nif)
+INSERT INTO usuario (usuario_id, nome, email, senha, nif)
 VALUES
-(1, 'João Silva', 'joao@email.com', HASHBYTES('SHA2_256', '123456'), 123456789),
-(2, 'Maria Souza', 'maria@email.com', HASHBYTES('SHA2_256', '654321'), 987654321),
-(3, 'Carlos Lima', 'carlos@email.com', HASHBYTES('SHA2_256', 'abc123'), 456789123);
+(@Usuario1,'Ana Martins','ana.martins@empresa.com',HASHBYTES('SHA2_256','Ana@123'),123456789),
+(@Usuario2,'Bruno Costa','bruno.costa@empresa.com',HASHBYTES('SHA2_256','Bruno@123'),987654321),
+(@Usuario3,'Camila Rocha','camila.rocha@empresa.com',HASHBYTES('SHA2_256','Camila@123'),456123789),
+(@Usuario4,'Diego Lima','diego.lima@empresa.com',HASHBYTES('SHA2_256','Diego@123'),741852963);
 GO
 
--- Locais
-INSERT INTO Local (local_id, nome, andar)
+INSERT INTO fila(nome)
 VALUES
-(1, 'Laboratório de Informática', '1º'),
-(2, 'Biblioteca', '2º'),
-(3, 'Secretaria', 'Térreo');
+('Elétrica'),
+('Hidráulica'),
+('Informática'),
+('Patrimônio'),
+('Limpeza');
 GO
 
--- Filas
-INSERT INTO Fila (nome)
+
+DECLARE @U1 UNIQUEIDENTIFIER = (SELECT usuario_id FROM usuario WHERE email='ana.martins@empresa.com');
+GO
+DECLARE @U2 UNIQUEIDENTIFIER = (SELECT usuario_id FROM usuario WHERE email='bruno.costa@empresa.com');
+GO
+DECLARE @U3 UNIQUEIDENTIFIER = (SELECT usuario_id FROM usuario WHERE email='camila.rocha@empresa.com');
+GO
+DECLARE @U4 UNIQUEIDENTIFIER = (SELECT usuario_id FROM usuario WHERE email='diego.lima@empresa.com');
+GO
+
+INSERT INTO OrdemDeServico
+(nome_item,solicitante,dt_criacao,localizacao_id,descricao,imagem,status,fila)
 VALUES
-('TI'),
-('Manutenção'),
-('Infraestrutura');
+('Projetor',@U1,GETDATE(),1,'Projetor da sala de reuniões não liga.',NULL,1,3),
+
+('Ar Condicionado',@U2,DATEADD(DAY,-1,GETDATE()),2,
+'Ar condicionado sem refrigeração.',NULL,2,2),
+
+('Computador',@U3,DATEADD(DAY,-2,GETDATE()),3,
+'Computador apresenta tela azul.',NULL,1,3),
+
+('Lâmpada',@U4,DATEADD(DAY,-3,GETDATE()),1,
+'Lâmpada queimada no corredor.',NULL,3,1),
+
+('Impressora',@U1,DATEADD(DAY,-4,GETDATE()),2,
+'Impressora atolando papel.',NULL,2,3),
+
+('Janela',@U2,DATEADD(DAY,-5,GETDATE()),3,
+'Janela não fecha corretamente.',NULL,1,4),
+
+('Mesa',@U3,DATEADD(DAY,-6,GETDATE()),1,
+'Mesa com um pé quebrado.',NULL,3,4),
+
+('Cadeira',@U4,DATEADD(DAY,-7,GETDATE()),2,
+'Cadeira giratória sem regulagem.',NULL,2,4);
 GO
 
--- Status
-INSERT INTO Status (nome)
-VALUES
-('Aberta'),
-('Em Andamento'),
-('Concluída');
+SELECT * FROM OrdemDeServico
 GO
 
--- Ordens de Serviço
-INSERT INTO OrdemServico
-(or_id, nome_item, dt_criacao, descricao, imagem, status, status_id, fila_id, solicitante, local_id)
-VALUES
-(1, 'Projetor', GETDATE(), 'Projetor não liga.', NULL, 'Aberta', 1, 1, 1, 1),
-
-(2, 'Ar Condicionado', GETDATE(), 'Equipamento não resfria.', NULL, 'Em Andamento', 2, 2, 2, 2),
-
-(3, 'Computador', GETDATE(), 'Computador sem acesso à internet.', NULL, 'Concluída', 3, 1, 3, 1),
-
-(4, 'Impressora', GETDATE(), 'Impressora atolando papel.', NULL, 'Aberta', 1, 3, 1, 3),
-
-(5, 'Lâmpada', GETDATE(), 'Lâmpada queimada.', NULL, 'Em Andamento', 2, 2, 2, 3);
+SELECT * FROM usuario
 GO
+
+SELECT * FROM fila
+GO
+
+SELECT * FROM status

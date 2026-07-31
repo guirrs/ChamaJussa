@@ -74,6 +74,16 @@ namespace ChamaJussaAPI.Applications.Services
                 throw new DomainException("Já existe um usuário com este e-mail.");
             }
 
+            if(usuarioDto.Nome.Length == 0)
+            {
+                throw new DomainException("Nome é obrigatório.");
+            }
+
+            if(_repository.NIFExiste(usuarioDto.NIF))
+            {
+                throw new DomainException("Já existe um usuário com este NIF.");
+            }
+
             usuario usuario = new usuario
             {
                 usuario_id = Guid.NewGuid(),

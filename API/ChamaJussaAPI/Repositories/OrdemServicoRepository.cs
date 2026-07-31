@@ -88,18 +88,25 @@ namespace ChamaJussaAPI.Repositories
             return novoStatus.status_id;
         }
 
-        public int? ObterFilaInicialId()
+        public int? ObterFilaInicialId(int? filaId)
         {
-            var primeiraFila = _context.fila.OrderBy(f => f.fila_id).FirstOrDefault();
-            if (primeiraFila != null)
+            if (filaId != 0)
             {
-                return primeiraFila.fila_id;
+                return filaId;
             }
+            else
+            {
+                var primeiraFila = _context.fila.OrderBy(f => f.fila_id).FirstOrDefault();
+                if (primeiraFila != null)
+                {
+                    return primeiraFila.fila_id;
+                }
 
-            var novaFila = new fila { nome = "Geral" };
-            _context.fila.Add(novaFila);
-            _context.SaveChanges();
-            return novaFila.fila_id;
+                var novaFila = new fila { nome = "Geral" };
+                _context.fila.Add(novaFila);
+                _context.SaveChanges();
+                return novaFila.fila_id;
+            }
         }
     }
 }

@@ -1,0 +1,156 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\46336142825\\Desktop\\ChamaJussa\\API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1CF68D88-CFDE-B172-FB4E-963EAA8DAB43}|ChamaJussaAPI\\ChamaJussaAPI.csproj|c:\\users\\46336142825\\desktop\\chamajussa\\api\\chamajussaapi\\applications\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1CF68D88-CFDE-B172-FB4E-963EAA8DAB43}|ChamaJussaAPI\\ChamaJussaAPI.csproj|solutionrelative:chamajussaapi\\applications\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1CF68D88-CFDE-B172-FB4E-963EAA8DAB43}|ChamaJussaAPI\\ChamaJussaAPI.csproj|c:\\users\\46336142825\\desktop\\chamajussa\\api\\chamajussaapi\\applications\\services\\ordemservicoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1CF68D88-CFDE-B172-FB4E-963EAA8DAB43}|ChamaJussaAPI\\ChamaJussaAPI.csproj|solutionrelative:chamajussaapi\\applications\\services\\ordemservicoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1CF68D88-CFDE-B172-FB4E-963EAA8DAB43}|ChamaJussaAPI\\ChamaJussaAPI.csproj|c:\\users\\46336142825\\desktop\\chamajussa\\api\\chamajussaapi\\dtos\\ordemservicodto\\editarordemservicodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1CF68D88-CFDE-B172-FB4E-963EAA8DAB43}|ChamaJussaAPI\\ChamaJussaAPI.csproj|solutionrelative:chamajussaapi\\dtos\\ordemservicodto\\editarordemservicodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1CF68D88-CFDE-B172-FB4E-963EAA8DAB43}|ChamaJussaAPI\\ChamaJussaAPI.csproj|c:\\users\\46336142825\\desktop\\chamajussa\\api\\chamajussaapi\\dtos\\ordemservicodto\\criarordemservicodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1CF68D88-CFDE-B172-FB4E-963EAA8DAB43}|ChamaJussaAPI\\ChamaJussaAPI.csproj|solutionrelative:chamajussaapi\\dtos\\ordemservicodto\\criarordemservicodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1CF68D88-CFDE-B172-FB4E-963EAA8DAB43}|ChamaJussaAPI\\ChamaJussaAPI.csproj|c:\\users\\46336142825\\desktop\\chamajussa\\api\\chamajussaapi\\interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1CF68D88-CFDE-B172-FB4E-963EAA8DAB43}|ChamaJussaAPI\\ChamaJussaAPI.csproj|solutionrelative:chamajussaapi\\interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1CF68D88-CFDE-B172-FB4E-963EAA8DAB43}|ChamaJussaAPI\\ChamaJussaAPI.csproj|c:\\users\\46336142825\\desktop\\chamajussa\\api\\chamajussaapi\\repositories\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1CF68D88-CFDE-B172-FB4E-963EAA8DAB43}|ChamaJussaAPI\\ChamaJussaAPI.csproj|solutionrelative:chamajussaapi\\repositories\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1CF68D88-CFDE-B172-FB4E-963EAA8DAB43}|ChamaJussaAPI\\ChamaJussaAPI.csproj|c:\\users\\46336142825\\desktop\\chamajussa\\api\\chamajussaapi\\repositories\\ordemservicorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1CF68D88-CFDE-B172-FB4E-963EAA8DAB43}|ChamaJussaAPI\\ChamaJussaAPI.csproj|solutionrelative:chamajussaapi\\repositories\\ordemservicorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1CF68D88-CFDE-B172-FB4E-963EAA8DAB43}|ChamaJussaAPI\\ChamaJussaAPI.csproj|c:\\users\\46336142825\\desktop\\chamajussa\\api\\chamajussaapi\\interfaces\\iordemservicorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1CF68D88-CFDE-B172-FB4E-963EAA8DAB43}|ChamaJussaAPI\\ChamaJussaAPI.csproj|solutionrelative:chamajussaapi\\interfaces\\iordemservicorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UsuarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\46336142825\\Desktop\\ChamaJussa\\API\\ChamaJussaAPI\\Repositories\\UsuarioRepository.cs",
+              "RelativeDocumentMoniker": "ChamaJussaAPI\\Repositories\\UsuarioRepository.cs",
+              "ToolTip": "C:\\Users\\46336142825\\Desktop\\ChamaJussa\\API\\ChamaJussaAPI\\Repositories\\UsuarioRepository.cs",
+              "RelativeToolTip": "ChamaJussaAPI\\Repositories\\UsuarioRepository.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAA3wCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-31T11:51:03.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IUsuarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\46336142825\\Desktop\\ChamaJussa\\API\\ChamaJussaAPI\\Interfaces\\IUsuarioRepository.cs",
+              "RelativeDocumentMoniker": "ChamaJussaAPI\\Interfaces\\IUsuarioRepository.cs",
+              "ToolTip": "C:\\Users\\46336142825\\Desktop\\ChamaJussa\\API\\ChamaJussaAPI\\Interfaces\\IUsuarioRepository.cs",
+              "RelativeToolTip": "ChamaJussaAPI\\Interfaces\\IUsuarioRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-31T11:50:51.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsuarioService.cs",
+              "DocumentMoniker": "C:\\Users\\46336142825\\Desktop\\ChamaJussa\\API\\ChamaJussaAPI\\Applications\\Services\\UsuarioService.cs",
+              "RelativeDocumentMoniker": "ChamaJussaAPI\\Applications\\Services\\UsuarioService.cs",
+              "ToolTip": "C:\\Users\\46336142825\\Desktop\\ChamaJussa\\API\\ChamaJussaAPI\\Applications\\Services\\UsuarioService.cs",
+              "RelativeToolTip": "ChamaJussaAPI\\Applications\\Services\\UsuarioService.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAwwFIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-31T11:49:45.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CriarOrdemServicoDto.cs",
+              "DocumentMoniker": "C:\\Users\\46336142825\\Desktop\\ChamaJussa\\API\\ChamaJussaAPI\\DTOs\\OrdemServicoDto\\CriarOrdemServicoDto.cs",
+              "RelativeDocumentMoniker": "ChamaJussaAPI\\DTOs\\OrdemServicoDto\\CriarOrdemServicoDto.cs",
+              "ToolTip": "C:\\Users\\46336142825\\Desktop\\ChamaJussa\\API\\ChamaJussaAPI\\DTOs\\OrdemServicoDto\\CriarOrdemServicoDto.cs",
+              "RelativeToolTip": "ChamaJussaAPI\\DTOs\\OrdemServicoDto\\CriarOrdemServicoDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-31T11:19:09.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EditarOrdemServicoDto.cs",
+              "DocumentMoniker": "C:\\Users\\46336142825\\Desktop\\ChamaJussa\\API\\ChamaJussaAPI\\DTOs\\OrdemServicoDto\\EditarOrdemServicoDto.cs",
+              "RelativeDocumentMoniker": "ChamaJussaAPI\\DTOs\\OrdemServicoDto\\EditarOrdemServicoDto.cs",
+              "ToolTip": "C:\\Users\\46336142825\\Desktop\\ChamaJussa\\API\\ChamaJussaAPI\\DTOs\\OrdemServicoDto\\EditarOrdemServicoDto.cs",
+              "RelativeToolTip": "ChamaJussaAPI\\DTOs\\OrdemServicoDto\\EditarOrdemServicoDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-31T11:21:56.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrdemServicoService.cs",
+              "DocumentMoniker": "C:\\Users\\46336142825\\Desktop\\ChamaJussa\\API\\ChamaJussaAPI\\Applications\\Services\\OrdemServicoService.cs",
+              "RelativeDocumentMoniker": "ChamaJussaAPI\\Applications\\Services\\OrdemServicoService.cs",
+              "ToolTip": "C:\\Users\\46336142825\\Desktop\\ChamaJussa\\API\\ChamaJussaAPI\\Applications\\Services\\OrdemServicoService.cs",
+              "RelativeToolTip": "ChamaJussaAPI\\Applications\\Services\\OrdemServicoService.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAtwEUAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-31T11:22:12.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OrdemServicoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\46336142825\\Desktop\\ChamaJussa\\API\\ChamaJussaAPI\\Repositories\\OrdemServicoRepository.cs",
+              "RelativeDocumentMoniker": "ChamaJussaAPI\\Repositories\\OrdemServicoRepository.cs",
+              "ToolTip": "C:\\Users\\46336142825\\Desktop\\ChamaJussa\\API\\ChamaJussaAPI\\Repositories\\OrdemServicoRepository.cs",
+              "RelativeToolTip": "ChamaJussaAPI\\Repositories\\OrdemServicoRepository.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAADwv1oAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-31T11:26:18.004Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IOrdemServicoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\46336142825\\Desktop\\ChamaJussa\\API\\ChamaJussaAPI\\Interfaces\\IOrdemServicoRepository.cs",
+              "RelativeDocumentMoniker": "ChamaJussaAPI\\Interfaces\\IOrdemServicoRepository.cs",
+              "ToolTip": "C:\\Users\\46336142825\\Desktop\\ChamaJussa\\API\\ChamaJussaAPI\\Interfaces\\IOrdemServicoRepository.cs",
+              "RelativeToolTip": "ChamaJussaAPI\\Interfaces\\IOrdemServicoRepository.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA4wBAAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-31T11:29:49.008Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
