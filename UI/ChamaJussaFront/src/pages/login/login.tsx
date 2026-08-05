@@ -1,5 +1,6 @@
 import React from 'react'
 import { Image, Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
+import { Colors } from '../../constants/theme'
 
 
 //rfce cria essa estrutura rapida com a extensao: ES7+ React/Redux/React-Native snippets
@@ -24,7 +25,7 @@ const Login = () => {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#F3F4F6',
+        backgroundColor: Colors.corDeFundo,
         //sempre importante deixar o flex para que preenche os espacos vazios
         flex: 1,
         justifyContent: "center",
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
     },
     formulario: {
         backgroundColor: "#FFFFFF",
-        height: "65%",
+        height: "45%",
         width: "80%",
         alignItems: "center",
         fontSize: 16,
@@ -65,16 +66,18 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     input: {
-        backgroundColor: "#F3F4F6",
+        backgroundColor: Colors.corDeFundo,
         padding: "3%",
         marginTop: "2%",
         marginBottom: "5%"
     },
     botao:{
         alignItems: "center",
-        backgroundColor: "#10B981",
-        color: "white",
-        height: "30%",
+        backgroundColor: Colors.corBtnVerde,
+        color: "#FFFFFF",
+        height: "20%",
+        width: "100%",
+        borderRadius: 10,
         justifyContent: "center"
     }
 })

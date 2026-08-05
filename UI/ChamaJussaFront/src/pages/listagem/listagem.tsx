@@ -1,5 +1,6 @@
 import React from 'react'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
+import Footer from '../../components/footer'
 
 function Listagem() {
     return (
@@ -26,10 +27,11 @@ function Listagem() {
                         <Text style={styles.statusOS}>Aberta</Text>
                     </View>
 
-                    <Text>Vazamento hidráulico no Bloco B</Text>
-                    <Text>Há um vazamento constante de água por baixo da pia do banheiro masculino do segundo andar do Bloco B...</Text>
+                    <Text style={styles.tituloOS}>Vazamento hidráulico no Bloco B</Text>
+                    <Text style={styles.descricaoOS}>Há um vazamento constante de água por baixo da pia do banheiro masculino do segundo andar do Bloco B...</Text>
                 </View>
             </View>
+            <Footer/>
         </View>
     )
 }
@@ -62,8 +64,8 @@ const styles = StyleSheet.create({
     },
     filtros: {
         flexDirection: 'row',
-        gap: 20,
-        justifyContent: 'center'
+        gap: 10,
+        justifyContent: 'center',
     },
     opcao: {
         fontSize: 16,
@@ -87,6 +89,7 @@ const styles = StyleSheet.create({
     titulosCard: {
         flexDirection: 'row',
         justifyContent: 'space-between',
+        marginBottom: 10
     },
     numeroOS:{
         color: '#006FFF',
@@ -98,7 +101,19 @@ const styles = StyleSheet.create({
         backgroundColor: '#DBEAFE',
         borderRadius: 10,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        padding: 5,
+        paddingRight: 8,
+        paddingLeft: 8,
+        fontWeight: 'bold'
+    },
+    tituloOS: {
+        fontWeight: 'bold',
+        fontSize: 16,
+        marginBottom: 5
+    },
+    descricaoOS: {
+        color: 'abababa3'
     }
 })
 

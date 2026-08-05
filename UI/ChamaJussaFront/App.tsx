@@ -3,15 +3,22 @@ import { StyleSheet, Text, View } from 'react-native';
 import Login from './src/pages/login/login';
 import listagem from './src/pages/listagem/listagem';
 import Listagem from './src/pages/listagem/listagem';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 
 export default function App() {
   return (
-    // <View style={styles.container}>
-    //   <Text>Hello Word!</Text>
-    //   <StatusBar style="auto" />
-    // </View>
-    <Listagem/>
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.safeareaview}>
+        <StatusBar style='auto'/>
+        <Login/>
+      </SafeAreaView>
+      {/* // <View style={styles.container}>
+      //   <Text>Hello Word!</Text>
+      //   <StatusBar style="auto" />
+      // </View> */}
+      
+    </SafeAreaProvider>
   );
 }
 
@@ -23,3 +30,9 @@ export default function App() {
 //     justifyContent: 'center',
 //   },
 // });
+
+const styles = StyleSheet.create({
+  safeareaview: {
+    flex:1
+  }
+})
