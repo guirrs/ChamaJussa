@@ -1,6 +1,7 @@
 import React from 'react'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import Footer from '../../components/footer'
+import { Texto } from '../../constants/theme'
 
 function Listagem() {
     return (
@@ -10,7 +11,7 @@ function Listagem() {
                     <Text>Ola, Kessia</Text>
                     <Text style={styles.subTitulo}>Minha OSs</Text>
                 </View>
-                <Pressable style={styles.botaoOS}>Nova OS</Pressable>
+                <Pressable style={styles.botaoOS}><Text>Nova OS</Text></Pressable>
             </View>
 
             <View style={styles.filtros}>
@@ -40,7 +41,8 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: "#F3F4F6",
         fontSize: 20,
-        width: '100%'
+        width: '100%',
+        flex: 1
     },
     cabecalho: {
         flexDirection: 'row', 
@@ -48,7 +50,7 @@ const styles = StyleSheet.create({
         margin: 20
     },
     subTitulo: {
-        fontSize: 24,
+        fontSize: Texto.titulo,
         fontWeight: 'bold'
     },
     botaoOS: {
@@ -68,7 +70,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     opcao: {
-        fontSize: 16,
+        fontSize: Texto.descricao,
         color: '#abababa3',
         backgroundColor: 'white',
         borderColor: '#abababa3',

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Image, Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
-import { Colors } from '../../constants/theme'
+import { Colors, Texto } from '../../constants/theme'
 
 
 //rfce cria essa estrutura rapida com a extensao: ES7+ React/Redux/React-Native snippets
@@ -15,8 +15,10 @@ const Login = () => {
                     <Text style={styles.tituloCampo}>Email</Text>
                     <TextInput placeholder='email@gmail.com' style={styles.input} />
                     <Text style={styles.tituloCampo}>Senha</Text>
-                    <TextInput placeholder='senha' style={styles.input} />
-                    <Pressable style={styles.botao}>Acessar o Sistema</Pressable>
+                    <TextInput placeholder='senha' secureTextEntry={true} style={styles.input} />
+                    <Pressable style={styles.botao}>
+                        <Text style={{color: '#FFFFFF', fontWeight: 'bold'}}>Acessar o Sistema</Text>
+                    </Pressable>
                 </View>
             </View>
         </View>
@@ -31,7 +33,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         paddingBottom: 100,
-        fontSize: 16,
+        fontSize: Texto.titulo,
     },
     imagem:{
         marginTop: "10%"
@@ -41,7 +43,7 @@ const styles = StyleSheet.create({
         height: "45%",
         width: "80%",
         alignItems: "center",
-        fontSize: 16,
+        fontSize: Texto.descricao,
         borderRadius: 10,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
@@ -51,8 +53,9 @@ const styles = StyleSheet.create({
     },
     titulo: {
         paddingTop: 40,
-        fontSize: 24,
-        fontWeight: 'bold'
+        fontSize: Texto.titulo,
+        fontWeight: 'bold',
+        fontFamily: Texto.fontFamily
     },
     subTitulo: {
         color: "#7D7D7D",
