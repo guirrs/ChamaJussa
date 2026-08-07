@@ -1,16 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Login from './src/pages/login/login';
+import Login from './src/app/login';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import { Montserrat_400Regular, useFonts } from '@expo-google-fonts/montserrat';
-import Detalhe from './src/pages/detalhe/detalhe';
-import Listagem from './src/pages/listagem/listagem';
+import { Montserrat_400Regular, Montserrat_600SemiBold, Montserrat_700Bold, useFonts } from '@expo-google-fonts/montserrat';
+import Detalhe from './src/app/detalhe';
+import Listagem from './src/app/listagem';
+import CriarOS from './src/app/criarOs';
 
 
 export default function App() {
 
   let [fontsLoaded] = useFonts({
-    Montserrat_400Regular
+    Montserrat_400Regular,
+    Montserrat_600SemiBold,
+    Montserrat_700Bold
   });
 
   if (!fontsLoaded) {
@@ -21,7 +24,7 @@ export default function App() {
     <SafeAreaProvider>
       <SafeAreaView style={styles.safeareaview}>
         <StatusBar style='auto'/>
-        <Detalhe/>
+        <CriarOS/>
       </SafeAreaView>
       {/* // <View style={styles.container}>
       //   <Text>Hello Word!</Text>

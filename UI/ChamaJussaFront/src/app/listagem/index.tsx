@@ -2,8 +2,16 @@ import React from 'react'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import Footer from '../../components/footer'
 import { Texto } from '../../constants/theme'
+import { useRouter } from 'expo-router'
 
-function Listagem() {
+export default function Listagem() {
+
+    const router = useRouter();
+
+    function criarOs(){
+        router.push('/criarOs');
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.cabecalho}>
@@ -11,7 +19,7 @@ function Listagem() {
                     <Text>Ola, Kessia</Text>
                     <Text style={styles.subTitulo}>Minha OSs</Text>
                 </View>
-                <Pressable style={styles.botaoOS}><Text>Nova OS</Text></Pressable>
+                <Pressable style={styles.botaoOS} onPress={criarOs}><Text>Nova OS</Text></Pressable>
             </View>
 
             <View style={styles.filtros}>
@@ -62,7 +70,8 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         width: 105,
         height: 44,
-        borderRadius: 10
+        borderRadius: 10,
+        marginTop: 10
     },
     filtros: {
         flexDirection: 'row',
@@ -118,7 +127,3 @@ const styles = StyleSheet.create({
         color: 'abababa3'
     }
 })
-
-
-
-export default Listagem

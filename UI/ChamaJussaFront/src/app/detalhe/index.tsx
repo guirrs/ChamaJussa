@@ -3,7 +3,7 @@ import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-nati
 import Footer from '../../components/footer'
 import { Colors, Texto } from '../../constants/theme'
 
-function Detalhe() {
+export default function Detalhe() {
     return (
         <View style={styles.container}>
             <ScrollView contentContainerStyle={{ paddingBottom: 90 }}> 
@@ -51,8 +51,6 @@ function Detalhe() {
     )
 }
 
-export default Detalhe
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -70,6 +68,11 @@ const styles = StyleSheet.create({
         height: 650,
         alignSelf: 'center',
         borderRadius: 10,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5
     },
     tituloConteudo: {
         margin: 20,

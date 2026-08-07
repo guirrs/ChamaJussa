@@ -12,6 +12,7 @@ export const Colors = {
     corBtnVerde: '#10B981',
     corBranca: '#FFFFFF',
     corAzul: '#2D87FF',
+    corInput: "#7D7D7D",
 }
 
 export const BotaoTexto = {

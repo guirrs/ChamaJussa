@@ -1,25 +1,41 @@
 import React from 'react'
 import { Image, Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
 import { Colors, Texto } from '../../constants/theme'
+import { useRouter } from 'expo-router'
 
 
 //rfce cria essa estrutura rapida com a extensao: ES7+ React/Redux/React-Native snippets
-const Login = () => {
+export default function Login() {
+
+    const router = useRouter();
+
+    function acessar() {
+        // alert("teste")
+        //navigate e o push -> listagem de tela renderizadas
+        //ou Adiciona uma nova tela em cima da pilha.
+        // router.navigate("/listaOs")
+        router.push("/listagem")
+        // login -> listaOs
+        //replace -> Substitui a tela atual.
+        // router.replace("/listaOs")
+        // listaOs
+    }
+
     return (
         <View style={styles.container}>
             <Image style={styles.imagem} source={require('../../../assets/imgs/logo.png')} />
             <View style={styles.formulario}>
-                    <Text style={styles.titulo}>Chama Jussa</Text>
-                    <Text style={styles.subTitulo}>Gerenciamento de Ordens e Servico</Text>
+                <Text style={styles.titulo}>Chama Jussa</Text>
+                <Text style={styles.subTitulo}>Gerenciamento de Ordens e Servico</Text>
                 <View style={styles.campo}>
                     <Text style={styles.tituloCampo}>Email</Text>
                     <TextInput placeholder='email@gmail.com' style={styles.input} />
                     <Text style={styles.tituloCampo}>Senha</Text>
                     <TextInput placeholder='senha' secureTextEntry={true} style={styles.input} />
-                    <Pressable style={styles.botao}>
-                        <Text style={{color: '#FFFFFF', fontWeight: 'bold'}}>Acessar o Sistema</Text>
-                    </Pressable>
-                </View>
+
+                    <Pressable style={styles.botao} onPress={acessar}>
+                        <Text style={styles.textoBotao}>Acessar o Sistema</Text>
+                    </Pressable>                </View>
             </View>
         </View>
     )
@@ -35,11 +51,11 @@ const styles = StyleSheet.create({
         paddingBottom: 100,
         fontSize: Texto.titulo,
     },
-    imagem:{
+    imagem: {
         marginTop: "10%"
     },
     formulario: {
-        backgroundColor: "#FFFFFF",
+        backgroundColor: Colors.corBranca,
         height: "45%",
         width: "80%",
         alignItems: "center",
@@ -58,14 +74,14 @@ const styles = StyleSheet.create({
         fontFamily: Texto.fontFamily
     },
     subTitulo: {
-        color: "#7D7D7D",
+        color: Colors.corInput,
         paddingBottom: 40
     },
-    campo:{
+    campo: {
         width: "80%",
         fontWeight: 'bold',
     },
-    tituloCampo:{
+    tituloCampo: {
         fontWeight: 'bold'
     },
     input: {
@@ -74,15 +90,17 @@ const styles = StyleSheet.create({
         marginTop: "2%",
         marginBottom: "5%"
     },
-    botao:{
+    botao: {
         alignItems: "center",
         backgroundColor: Colors.corBtnVerde,
-        color: "#FFFFFF",
+        color: Colors.corBranca,
         height: "20%",
         width: "100%",
         borderRadius: 10,
         justifyContent: "center"
+    },
+    textoBotao: {
+        color: Colors.corBranca,
+        fontWeight: 'bold'
     }
 })
-
-export default Login

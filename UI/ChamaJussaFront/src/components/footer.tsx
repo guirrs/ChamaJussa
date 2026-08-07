@@ -1,25 +1,41 @@
+import { useRouter } from 'expo-router'
 import React from 'react'
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
 
 function Footer() {
+
+    const router = useRouter();
+
+    function acessarLista(){
+        router.replace('/listagem');
+    }
+
+    function acessarCriarOs(){
+        router.replace('/criarOs');
+    }
+
+    function acessarNotificacoes(){
+        router.replace('/notificacao');
+    }
+
     return (
         <View style={styles.container}>
-                <View style={styles.opcao}>
+                <Pressable style={styles.opcao} onPress={acessarLista}>
                     <Image style={styles.imagemLista} resizeMode="contain" source={require("../../assets/imgs/Lista.png")} />
                     <Text>Minha OS</Text>
-                </View>
-                <View style={styles.opcao}>
+                </Pressable>
+                <Pressable style={styles.opcao} onPress={acessarCriarOs}>
                     <Image style={styles.imagemCriar} resizeMode="contain" source={require("../../assets/imgs/Criar.png")} />
                     <Text>Criar OS</Text>
-                </View>
-                <View style={styles.opcao}>
+                </Pressable>
+                <Pressable style={styles.opcao} onPress={acessarNotificacoes}>
                     <Image style={styles.imagemSino} resizeMode="contain" source={require("../../assets/imgs/Notificacoes.png")} />
                     <Text>Notificacoes</Text>
-                </View>
-                <View style={styles.opcao}>
+                </Pressable>
+                <Pressable style={styles.opcao} >
                     <Image style={styles.imagemPerfil} resizeMode="contain" source={require("../../assets/imgs/Perfil.png")} />
                     <Text>Perfil</Text>
-                </View>
+                </Pressable>
             </View>
     )
 }
