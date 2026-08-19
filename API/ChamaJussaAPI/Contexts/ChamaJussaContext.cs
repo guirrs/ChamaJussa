@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using ChamaJussaAPI.Domains;
 using Microsoft.EntityFrameworkCore;
@@ -26,22 +26,25 @@ public partial class ChamaJussaContext : DbContext
 
     public virtual DbSet<usuario> usuario { get; set; }
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=ChamaJussa;Trusted_Connection=True;TrustServerCertificate=True");
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<OrdemDeServico>(entity =>
         {
-            entity.HasKey(e => e.os_id).HasName("PK__OrdemDeS__374FA4B502ACC0D3");
+            entity.HasKey(e => e.os_id);
 
             entity.Property(e => e.descricao)
                 .HasMaxLength(255)
                 .IsUnicode(false);
             entity.Property(e => e.dt_criacao)
-                .HasDefaultValueSql("(getdate())")
+                .HasDefaultValueSql("(getdate())", "DF_OrdemDeServico_dt_criacao")
                 .HasColumnType("datetime");
+            entity.Property(e => e.imagem).IsUnicode(false);
             entity.Property(e => e.nome_item)
                 .HasMaxLength(50)
-                .IsUnicode(false);
-            entity.Property(e => e.imagem)
                 .IsUnicode(false);
 
             entity.HasOne(d => d.filaNavigation).WithMany(p => p.OrdemDeServico)
@@ -63,7 +66,7 @@ public partial class ChamaJussaContext : DbContext
 
         modelBuilder.Entity<fila>(entity =>
         {
-            entity.HasKey(e => e.fila_id).HasName("PK__fila__79CFDF2361F5E5BC");
+            entity.HasKey(e => e.fila_id);
 
             entity.Property(e => e.nome)
                 .HasMaxLength(50)
@@ -72,7 +75,7 @@ public partial class ChamaJussaContext : DbContext
 
         modelBuilder.Entity<localizacao>(entity =>
         {
-            entity.HasKey(e => e.localizacao_id).HasName("PK__localiza__91EC50FDE29706B0");
+            entity.HasKey(e => e.localizacao_id);
 
             entity.Property(e => e.andar)
                 .HasMaxLength(15)
@@ -84,7 +87,7 @@ public partial class ChamaJussaContext : DbContext
 
         modelBuilder.Entity<status>(entity =>
         {
-            entity.HasKey(e => e.status_id).HasName("PK__status__3683B531A72E7965");
+            entity.HasKey(e => e.status_id);
 
             entity.Property(e => e.nome)
                 .HasMaxLength(30)
@@ -93,13 +96,13 @@ public partial class ChamaJussaContext : DbContext
 
         modelBuilder.Entity<usuario>(entity =>
         {
-            entity.HasKey(e => e.usuario_id).HasName("PK__usuario__2ED7D2AF4F83E425");
+            entity.HasKey(e => e.usuario_id);
 
-            entity.HasIndex(e => e.email, "UQ__usuario__AB6E61647E3CD976").IsUnique();
+            entity.HasIndex(e => e.email, "UQ_usuario_email").IsUnique();
 
-            entity.HasIndex(e => e.nif, "UQ__usuario__DF97D0F2C540B210").IsUnique();
+            entity.HasIndex(e => e.nif, "UQ_usuario_nif").IsUnique();
 
-            entity.Property(e => e.usuario_id).HasDefaultValueSql("(newid())");
+            entity.Property(e => e.usuario_id).HasDefaultValueSql("(newid())", "DF_usuario_usuario_id");
             entity.Property(e => e.email)
                 .HasMaxLength(50)
                 .IsUnicode(false);

@@ -26,6 +26,26 @@
     ]
   },
   {
+    "ContainingType": "ChamaJussaAPI.Controllers.LocalController",
+    "Method": "Listar",
+    "RelativePath": "api/Local",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ChamaJussaAPI.Domains.localizacao, ChamaJussaAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "ChamaJussaAPI.Controllers.OrdemServicoController",
     "Method": "Adicionar",
     "RelativePath": "api/OrdemServico",
@@ -40,11 +60,6 @@
       },
       {
         "Name": "LocalizacaoId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "FilaId",
         "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },
@@ -137,11 +152,6 @@
       },
       {
         "Name": "LocalizacaoId",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "FilaId",
         "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },

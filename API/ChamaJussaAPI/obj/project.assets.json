@@ -67,18 +67,6 @@
           }
         }
       },
-      "DotNetEnv/3.2.0": {
-        "type": "package",
-        "dependencies": {
-          "Superpower": "3.0.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/DotNetEnv.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/DotNetEnv.dll": {}
-        }
-      },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -932,19 +920,6 @@
           }
         }
       },
-      "Superpower/3.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net5.0/Superpower.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net5.0/Superpower.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Swashbuckle.AspNetCore/6.6.2": {
         "type": "package",
         "dependencies": {
@@ -1328,20 +1303,6 @@
         "lib/net8.0/Azure.Identity.xml",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
-      ]
-    },
-    "DotNetEnv/3.2.0": {
-      "sha512": "2q+PD+aJcRW9QuRcIv4F8WbvEDxI6cwxzZJec2i45cBY4cAKCAoW4ZPkApJ7H82wr6Yfmxx/0kb1nLnRmZrGZA==",
-      "type": "package",
-      "path": "dotnetenv/3.2.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE",
-        "README.md",
-        "dotnetenv.3.2.0.nupkg.sha512",
-        "dotnetenv.nuspec",
-        "lib/netstandard2.0/DotNetEnv.dll"
       ]
     },
     "Humanizer.Core/2.14.1": {
@@ -3323,22 +3284,6 @@
         "supabase-storage-csharp.nuspec"
       ]
     },
-    "Superpower/3.0.0": {
-      "sha512": "bjKbAYWePooCAvPxQq+3KnmcLfRggMyRoXmtBMlmCG71bdwBHrO6rmRJ2DRIodg5aztNcxeZXBUVWT+H+MZUhw==",
-      "type": "package",
-      "path": "superpower/3.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Superpower-White-400px.png",
-        "lib/net5.0/Superpower.dll",
-        "lib/net5.0/Superpower.xml",
-        "lib/netstandard2.0/Superpower.dll",
-        "lib/netstandard2.0/Superpower.xml",
-        "superpower.3.0.0.nupkg.sha512",
-        "superpower.nuspec"
-      ]
-    },
     "Swashbuckle.AspNetCore/6.6.2": {
       "sha512": "+NB4UYVYN6AhDSjW0IJAd1AGD8V33gemFNLPaxKTtPkHB+HaKAKf9MGAEUPivEWvqeQfcKIw8lJaHq6LHljRuw==",
       "type": "package",
@@ -3801,7 +3746,6 @@
   "projectFileDependencyGroups": {
     "net10.0": [
       "AWSSDK.S3 >= 4.0.101.5",
-      "DotNetEnv >= 3.2.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 10.0.10",
       "Microsoft.EntityFrameworkCore >= 10.0.10",
       "Microsoft.EntityFrameworkCore.Design >= 10.0.10",
@@ -3866,10 +3810,6 @@
           "AWSSDK.S3": {
             "target": "Package",
             "version": "[4.0.101.5, )"
-          },
-          "DotNetEnv": {
-            "target": "Package",
-            "version": "[3.2.0, )"
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",

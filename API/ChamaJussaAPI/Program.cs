@@ -1,24 +1,15 @@
-using ChamaJussaAPI.Applications.Autenticacao;
-using ChamaJussaAPI.Applications.Services;
-using ChamaJussaAPI.Contexts;
-using ChamaJussaAPI.Interfaces;
-using ChamaJussaAPI.Repositories;
-using DotNetEnv;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using ChamaJussaAPI.Contexts;
+using ChamaJussaAPI.Interfaces;
+using ChamaJussaAPI.Repositories;
+using ChamaJussaAPI.Applications.Services;
+using ChamaJussaAPI.Applications.Autenticacao;
 
 var builder = WebApplication.CreateBuilder(args);
-
-Env.Load();
-
-// PEGA A CONNECTION STRING DO .env
-string connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
-
-// CONECTA AO BANCO COM A CONNECTION STRING DO .env
-builder.Services.AddDbContext<ChamaJussaContext>(options => options.UseSqlServer(connectionString));
 
 // Add services to the container.
 
@@ -70,10 +61,15 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+// Registrar DbContext com a conexão SQL Server scaffolded
+builder.Services.AddDbContext<ChamaJussaContext>(options =>
+    options.UseSqlServer("Server=DESKTOP-LAO5MIJ\\SQLEXPRESSTEC;Database=ChamaJussa;user=sa;pwd=abc123;TrustServerCertificate=True"));
+
 // Registros de Injeção de Dependência (DI)
 // Repositórios
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IOrdemServicoRepository, OrdemServicoRepository>();
+builder.Services.AddScoped<ILocais, LocalRepository>();
 
 // Serviços
 builder.Services.AddScoped<IStorageService, LocalStorageService>();
@@ -110,13 +106,18 @@ var app = builder.Build();
 app.UseCors("CorsPolicy");
 
 // Configure the HTTP request pipeline.
+//Basta fazer o redirecionamento de HTTPS rodar apenas quando não estiver em desenvolvimento, ou simplesmente comentar essa linha durante os testes locais:
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+// Execute o redirecionamento HTTPS apenas em produção:
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 
 // Habilita a servir arquivos estáticos (como as imagens salvas na pasta wwwroot)
 app.UseStaticFiles();

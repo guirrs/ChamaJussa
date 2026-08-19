@@ -53,6 +53,44 @@
         }
       }
     },
+    "/api/Local": {
+      "get": {
+        "tags": [
+          "Local"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/localizacao"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/localizacao"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/localizacao"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/OrdemServico": {
       "post": {
         "tags": [
@@ -71,10 +109,6 @@
                     "type": "integer",
                     "format": "int32"
                   },
-                  "FilaId": {
-                    "type": "integer",
-                    "format": "int32"
-                  },
                   "Descricao": {
                     "type": "string"
                   },
@@ -89,9 +123,6 @@
                   "style": "form"
                 },
                 "LocalizacaoId": {
-                  "style": "form"
-                },
-                "FilaId": {
                   "style": "form"
                 },
                 "Descricao": {
@@ -231,10 +262,6 @@
                     "type": "integer",
                     "format": "int32"
                   },
-                  "FilaId": {
-                    "type": "integer",
-                    "format": "int32"
-                  },
                   "Descricao": {
                     "type": "string"
                   },
@@ -249,9 +276,6 @@
                   "style": "form"
                 },
                 "LocalizacaoId": {
-                  "style": "form"
-                },
-                "FilaId": {
                   "style": "form"
                 },
                 "Descricao": {
@@ -697,11 +721,170 @@
         },
         "additionalProperties": false
       },
+      "OrdemDeServico": {
+        "type": "object",
+        "properties": {
+          "os_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome_item": {
+            "type": "string",
+            "nullable": true
+          },
+          "solicitante": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "dt_criacao": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "localizacao_id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          },
+          "imagem": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "fila": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "filaNavigation": {
+            "$ref": "#/components/schemas/fila"
+          },
+          "localizacao": {
+            "$ref": "#/components/schemas/localizacao"
+          },
+          "solicitanteNavigation": {
+            "$ref": "#/components/schemas/usuario"
+          },
+          "statusNavigation": {
+            "$ref": "#/components/schemas/status"
+          }
+        },
+        "additionalProperties": false
+      },
       "TokenDto": {
         "type": "object",
         "properties": {
           "token": {
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "fila": {
+        "type": "object",
+        "properties": {
+          "fila_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "ordemDeServico": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrdemDeServico"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "localizacao": {
+        "type": "object",
+        "properties": {
+          "localizacao_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "andar": {
+            "type": "string",
+            "nullable": true
+          },
+          "ordemDeServico": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrdemDeServico"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "status": {
+        "type": "object",
+        "properties": {
+          "status_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "ordemDeServico": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrdemDeServico"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "usuario": {
+        "type": "object",
+        "properties": {
+          "usuario_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "senha": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true
+          },
+          "nif": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ordemDeServico": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrdemDeServico"
+            },
             "nullable": true
           }
         },
