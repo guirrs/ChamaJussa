@@ -3,8 +3,13 @@ import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
 import { Entypo, Feather, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { styles } from './listaOs.styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useLocalSearchParams } from 'expo-router';
+import { useDetalheOs } from '../../hooks/useDetalhesOs';
 
 export default function DetalheOS() {
+    const {id} = useLocalSearchParams<{id: string}>();
+    const os = useDetalheOs(id)
+
     return (
         <SafeAreaView style={styles.safeArea}>
             {/* Título Principal */}
@@ -15,15 +20,15 @@ export default function DetalheOS() {
             <View style={styles.card}>
                 {/* Se você tentar aplicar um padding: 20 usando a propriedade style comum em um ScrollView, a barra de rolagem vai cortar visualmente ou o comportamento de scroll pode quebrar nas extremidades. */}
                 <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
-                    <Text style={styles.title}>Vazamento hidráulico</Text>
-                    <Text style={styles.date}>Criada em 17/06/2026, 11:29:58</Text>
+                    <Text style={styles.title}>{os?.statusNome}</Text>
+                    <Text style={styles.date}>Criada em {os?.dtCriacao}</Text>
 
                     {/* Item: Máquina / Equipamento */}
                     <View style={styles.infoRow}>
                         <Entypo name="tools" size={24} color="#006FFF" style={styles.icon} />
                         <View>
                             <Text style={styles.label}>Máquina / Equipamento</Text>
-                            <Text style={styles.value}>Tubulação/Sifão da Pia</Text>
+                            <Text style={styles.value}>{os?.nomeItem}</Text>
                         </View>
                     </View>
 
@@ -32,7 +37,7 @@ export default function DetalheOS() {
                         <Ionicons name="location-outline" size={22} color="#FF3B30" style={styles.icon} />
                         <View>
                             <Text style={styles.label}>Local / Setor</Text>
-                            <Text style={styles.value}>Banheiro Masculino - Bloco B - 2º Andar</Text>
+                            <Text style={styles.value}>{os?.localizacaoNome}</Text>
                         </View>
                     </View>
 
@@ -41,7 +46,7 @@ export default function DetalheOS() {
                         <Feather name="user" size={20} color="#34C759" style={styles.icon} />
                         <View>
                             <Text style={styles.label}>Solicitante</Text>
-                            <Text style={styles.value}>Késsia Milena</Text>
+                            <Text style={styles.value}>{os?.solicitanteNome}</Text>
                         </View>
                     </View>
 
@@ -50,7 +55,7 @@ export default function DetalheOS() {
                     {/* Descrição */}
                     <Text style={styles.sectionTitle}>Descrição do Problema</Text>
                     <Text style={styles.descriptionText}>
-                        Há um vazamento constante de água por baixo da pia do banheiro masculino do segundo andar do Bloco B. Está alagando o chão e causando risco de queda.
+                        {os?.descricao}
                     </Text>
 
                     {/* Foto */}

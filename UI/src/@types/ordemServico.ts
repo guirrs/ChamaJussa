@@ -5,5 +5,7 @@ export interface OrdemServico{
     dtCriacao: string,
     localizacaoNome: string,
     descricao: string,
-    statusNome: string
+    imagem?: string,
+    statusNome: string,
+    filaNome: string
 }

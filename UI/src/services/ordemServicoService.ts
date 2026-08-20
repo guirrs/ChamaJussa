@@ -6,7 +6,12 @@ export const ordemServicoService = {
         const resposta = await api.get<OrdemServico[]>('OrdemServico');
 
         return resposta.data;
+    },
+    async buscarPorId(id: number | string) : Promise<OrdemServico>{
+        const resposta = await api.get<OrdemServico>(`OrdemServico/${id}`)
+        return resposta.data
     }
 }
+
 
 export default ordemServicoService; 
