@@ -19,5 +19,25 @@ export function useDetalheOs(id: string) {
         carregarOs()
     }, [])
 
-    return os;
+    const formartarData = (dataStr? : string) =>{
+        if(!dataStr) return '';
+        try {
+            const data = new Date(dataStr);
+            return isNaN(data.getTime()) ? dataStr : data.toLocaleString('pt-BR');
+        } catch (error) {
+            return dataStr
+        }
+    }
+
+   const osIdentificador = os?.osId
+        ? `OS-${String(os.osId).padStart(3, '0')}`
+        : id
+        ? `OS-${String(id).padStart(3, '0')}`
+        : 'OS';
+
+    return {
+        os,
+        dataFormatada : formartarData(os?.dtCriacao),
+        osIdentificador
+    }
 }
